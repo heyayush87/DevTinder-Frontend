@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/Constant";
 const Login = () => {
     const [emailId, setEmailId] = useState("");
-    const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -20,7 +21,8 @@ const Login = () => {
             dispatch(addUser(res?.data));
             navigate("/");
         }
-        catch(error) {
+        catch (error) {
+          setError(error?.response?.data || "Login failed");
             console.error("Login failed:", error);
         }
     }
@@ -47,7 +49,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </fieldset>
-
+            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
             <div className="card-actions  px-4 m-4 justify-center ">
                         <button className="btn btn-primary"
                         onClick={handleLogin}>Login</button>
