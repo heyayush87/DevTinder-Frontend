@@ -46,7 +46,7 @@ const Feed = () => {
   return (
     
       <div className="flex justify-center my-30">
-        {feed?.length ? <UserCard user={feed[0]} /> : <span>Loading...</span>}
+      {feed?.length && <UserCard user={feed[0]} />}
       </div>
   )
 }
