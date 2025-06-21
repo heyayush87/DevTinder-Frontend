@@ -1,35 +1,36 @@
-import React from 'react'
-import { useSelector ,useDispatch} from 'react-redux';
-import { Link } from 'react-router-dom';
-import { BASE_URL } from '../utils/Constant';
-import axios from 'axios';
-import { removeUser } from '../utils/UserSlice';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { BASE_URL } from "../utils/Constant";
+import axios from "axios";
+import { removeUser } from "../utils/UserSlice";
 
 const NavBar = () => {
-  
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
+
   const handleLogout = async () => {
     try {
       await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
-      dispatch(removeUser())
-      return navigate("/login");
+      dispatch(removeUser());
+      navigate("/login");
     } catch (error) {
       console.error("Logout failed:", error);
     }
   };
+
   return (
-    <div className="navbar bg-base-300 shadow-sm">
+    <div className="navbar bg-base-300 shadow-sm px-4 flex-wrap">
       <div className="flex-1">
         <Link to="/" className="btn btn-ghost text-xl">
-          🧑‍💻DevTinder
+          🧑‍💻 DevTinder
         </Link>
       </div>
+
       {user && (
-        <div className="flex gap-2">
-          <div className="dropdown dropdown-end mx-5">
+        <div className="flex items-center gap-4">
+          <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
               role="button"
@@ -39,24 +40,38 @@ const NavBar = () => {
                 <img alt="user photo" src={user.photo} />
               </div>
             </div>
+
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link to="/profile" className="justify-between">
+                <Link to="/profile" className="font-semibold py-2">
                   Profile
-                  <span className="badge">New</span>
                 </Link>
               </li>
               <li>
-                <Link to="/connection">Connection</Link>
+                <Link to="/connection" className="font-semibold py-2">
+                  Connection
+                </Link>
               </li>
               <li>
-                <Link to="/request">Requests</Link>
+                <Link to="/request" className="font-semibold py-2">
+                  Requests
+                </Link>
               </li>
               <li>
-                <a onClick={handleLogout}>Logout</a>
+                <Link to="/" className="font-semibold py-2">
+                  Feed
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className="font-semibold py-2 text-left"
+                >
+                  Logout
+                </button>
               </li>
             </ul>
           </div>
@@ -64,6 +79,6 @@ const NavBar = () => {
       )}
     </div>
   );
-}
+};
 
-export default NavBar
+export default NavBar;

@@ -13,7 +13,7 @@ const Body = () => {
   const user=useSelector((store) => store.user);
   const dispatch = useDispatch();
   const fetchuser = async () => {
-    if(user)return; // If user is already fetched, no need to fetch again
+    if(user)return ; // If user is already fetched, no need to fetch again
     try {
       const res = await axios.get(BASE_URL + "/profile/view", { withCredentials: true });
       dispatch(addUser(res?.data));
