@@ -33,7 +33,7 @@ const EditProfile = ({ user }) => {
   const SaveProfile = async () => {
     try {
       const res = await axios.patch(
-        BASE_URL + "/profile/edit",
+        `${BASE_URL}/profile/edit`,
         {
           firstname,
           lastname,
@@ -51,6 +51,11 @@ const EditProfile = ({ user }) => {
       settoast(true);
       setTimeout(() => settoast(false), 3000);
     } catch (error) {
+      console.log("Error details:", {
+        status: error.response?.status,
+        data: error.response?.data,
+        message: error.message,
+      });
       setError(error?.response?.data || error.message);
     }
   };
