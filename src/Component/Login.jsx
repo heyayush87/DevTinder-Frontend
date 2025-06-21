@@ -80,7 +80,7 @@ const Login = () => {
 
         <label className="block text-white text-sm mb-1">Email</label>
         <input
-          type="text"
+          type="email"
           className="input input-bordered w-full rounded-lg mb-4"
           value={emailId}
           onChange={(e) => setEmailId(e.target.value)}
