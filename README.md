@@ -44,6 +44,6 @@ Encryption: bcryptjs for password hashing
 ## Profile Page
 ![Profile Page ](https://github.com/heyayush87/PROFILE-MATCHER-Frontend/blob/b0846144b89eae5361db3fea79f95a4f3ea15a0d/Screenshot%202025-06-22%20200456.png)
 
-## Request Page
+## Feed Page
 ![Request Page ](https://github.com/heyayush87/PROFILE-MATCHER-Frontend/blob/7df62618f5c55c637ae671e3ad88805f3a0c2402/Screenshot%202025-06-22%20200432.png)
 
