@@ -37,3 +37,7 @@ Encryption: bcryptjs for password hashing
 
 
 
+### SIGNUP PAGE
+
+![Signup Page](https://github.com/heyayush87/PROFILE-MATCHER-Frontend/blob/feb621a6bc38952b4de28c62e8ed09a7d930915b/Screenshot%202025-06-22%20193044.png)
+
