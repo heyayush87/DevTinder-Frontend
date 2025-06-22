@@ -1,12 +1,34 @@
-# React + Vite
+## 💼 NetStream | Developer Profile Matcher App (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Profile Matcher is a developer networking platform where users can create profiles and connect with other developers.
+It features secure authentication using JWT, Express.js backend, and password encryption with bcryptjs.
+Users can view, edit profiles, and manage connection requests with real-time interaction.
+Built with React, Redux Toolkit for state management, Node.js, Express.js, and MongoDB, it’s fully responsive across all devices.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
+Frontend: React.js, Vite, Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+State Management: Redux Toolkit
 
-## Expanding the ESLint configuration
+Backend: Node.js, Express.js
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Authentication: JWT (JSON Web Token) + Secure Cookies
+
+Database: MongoDB with Mongoose
+
+Encryption: bcryptjs for password hashing
+
+Backend Repo: https://github.com/heyayush87/PROFILE-MATCHER-BACKEND
+
+## 📌 Features
+🏠 Developer Profiles - Create and customize your profile.
+🤝 Connect with Developers - Send and accept connection requests.
+🔒 Authentication - Secure login & signup using JWT.
+👀 View Profiles - Browse other developer profiles.
+✏️ Edit Profile - Update personal details, skills, and bio.
+📩 Send Connection Requests - Request to connect with other developers.
+✅ Review Connection Requests - Accept or reject incoming connection requests.
+🌍 Responsive Design - Fully optimized for mobile & desktop.
+🔧 API Endpoints
+
+

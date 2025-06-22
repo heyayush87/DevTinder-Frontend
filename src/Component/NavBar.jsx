@@ -24,7 +24,7 @@ const NavBar = () => {
     <div className="navbar bg-base-300 shadow-sm px-4 flex-wrap">
       <div className="flex-1">
         <Link to="/" className="btn btn-ghost text-xl">
-          🧑‍💻 DevTinder
+          🧑‍💻 PROFILE MATCHER
         </Link>
       </div>
 
