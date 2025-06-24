@@ -52,7 +52,7 @@ const Login = () => {
   
 
   return (
-    <div className="flex justify-center px-4 sm:px-6 lg:px-8 py-10">
+    <div className="min-h-screen flex items-center justify-center px-4 py-10 bg-base-200">
       <div className="w-full max-w-md bg-base-300 rounded-lg shadow-lg p-6">
         <h2 className="text-center text-2xl font-bold mb-4 text-white">
           {islogin ? "Login" : "Sign Up"}
@@ -116,6 +116,7 @@ const Login = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Login;

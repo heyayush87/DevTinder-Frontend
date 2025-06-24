@@ -27,12 +27,17 @@ const Body = () => {
 
   useEffect(()=>{fetchuser()},[])
   return (
-    <div>
-      <NavBar />
-      <Outlet />
-      <Footer/>
-    </div>
-  )
+    
+      <div className="flex flex-col min-h-screen bg-base-200">
+        <NavBar />
+        <main className="flex-grow pb-24 px-4">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+    );
+    
+  
 }
 
 export default Body

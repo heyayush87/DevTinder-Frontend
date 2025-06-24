@@ -4,29 +4,29 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { addRequests, removeRequest } from "../utils/RequestSlice";
 
-
-
 const Request = () => {
   const requestList = useSelector((store) => store.requests);
   const dispatch = useDispatch();
 
   const reviewRequest = async (status, _id) => {
     try {
-      const res = await axios.post(BASE_URL + "/request/review/" + status + "/" + _id, {}, { withCredentials: true });
+      await axios.post(
+        `${BASE_URL}/request/review/${status}/${_id}`,
+        {},
+        { withCredentials: true }
+      );
       dispatch(removeRequest(_id));
-    } catch(error) {
-       console.error(error.message)
+    } catch (error) {
+      console.error(error.message);
     }
-  }
+  };
 
   const fetchRequest = async () => {
     try {
       const res = await axios.get(BASE_URL + "/user/request/received", {
         withCredentials: true,
       });
-        console.log("res from backend" , res?.data?.data);
       dispatch(addRequests(res?.data?.data || []));
-      
     } catch (err) {
       console.error("Error: " + err.message);
     }
@@ -37,14 +37,15 @@ const Request = () => {
   }, []);
 
   if (!requestList) return null;
+
   if (requestList.length === 0)
     return (
       <h1 className="text-white text-xl text-center mt-10">No Request Found</h1>
     );
 
   return (
-    <div className="text-center my-10">
-      <h1 className="text-bold text-white text-3xl mb-6">Requests</h1>
+    <div className="text-center py-10 px-4 sm:px-6 lg:px-8 pb-28">
+      <h1 className="font-bold text-white text-3xl mb-6">Requests</h1>
 
       {requestList.map((req) => {
         const user = req.fromUserId;
@@ -84,18 +85,21 @@ const Request = () => {
                 </p>
               )}
               <p className="text-sm mt-1">{about}</p>
-              <button
-                className="btn btn-primary mx-2"
-                onClick={()=>reviewRequest("rejected", req._id)}
-              >
-                Reject
-              </button>
-              <button
-                className="btn btn-secondary mx-2"
-                onClick={()=>reviewRequest("accepted", req._id)}
-              >
-                Accept
-              </button>
+
+              <div className="mt-2 flex flex-wrap gap-2">
+                <button
+                  className="btn btn-primary"
+                  onClick={() => reviewRequest("rejected", req._id)}
+                >
+                  Reject
+                </button>
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => reviewRequest("accepted", req._id)}
+                >
+                  Accept
+                </button>
+              </div>
 
               {Skills?.length > 0 && (
                 <div className="mt-4">
