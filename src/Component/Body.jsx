@@ -1,43 +1,44 @@
-
-import { BASE_URL } from '../utils/Constant'
-import Footer from './Footer'
-import NavBar from './NavBar'
 import { Outlet, useNavigate } from "react-router-dom";
-import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
-import { addUser } from '../utils/UserSlice'  
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { addUser } from "../utils/UserSlice";
+import axios from "axios";
+import { BASE_URL } from "../utils/Constant";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 const Body = () => {
   const navigate = useNavigate();
-  const user=useSelector((store) => store.user);
+  const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
-  const fetchuser = async () => {
-    if(user)return ; // If user is already fetched, no need to fetch again
+
+  const fetchUser = async () => {
     try {
-      const res = await axios.get(BASE_URL + "/profile/view", { withCredentials: true });
-      dispatch(addUser(res?.data));
-    } catch (error) {
-       if (error.response?.status === 401) {
-        navigate("/login");
-      }
-      console.error("Error fetching user:", error);
+      const res = await axios.get(BASE_URL + "/profile/view", {
+        withCredentials: true,
+      });
+      dispatch(addUser(res.data));
+    } catch (err) {
+      console.warn("User not authenticated.");
+      navigate("/login");
     }
-  }
+  };
 
-  useEffect(()=>{fetchuser()},[])
+  useEffect(() => {
+    if (!user) {
+      fetchUser();
+    }
+  }, [user]);
+
   return (
-    
-      <div className="flex flex-col min-h-screen bg-base-200">
-        <NavBar />
-        <main className="flex-grow pb-24 px-4">
-          <Outlet />
-        </main>
-        <Footer />
-      </div>
-    );
-    
-  
-}
+    <div className="min-h-screen flex flex-col">
+      <NavBar />
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
-export default Body
+export default Body;
