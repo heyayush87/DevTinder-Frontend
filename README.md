@@ -1,30 +1,29 @@
 ## 💼 NetStream | Developer Profile Matcher App (Frontend)
 
-Profile Matcher is a developer networking platform where users can create profiles and connect with other developers.
+- Profile Matcher is a developer networking platform where users can create profiles and connect with other developers.
 
-It features secure authentication using JWT, an Express.js backend, and password encryption with bcryptjs.
+- It features secure authentication using JWT, an Express.js backend, and password encryption with bcryptjs.
 
-Users can view, edit profiles, and manage connection requests with real-time interaction.
+- Users can view, edit profiles, and manage connection requests with real-time interaction.
 
-Built with React, Redux Toolkit for state management, Node.js, Express.js, and MongoDB, it’s fully responsive across all devices.
+- Built with React, Redux Toolkit for state management, Node.js, Express.js, and MongoDB, it’s fully responsive across all devices.
 
 ## 🚀 Tech Stack
-Frontend: React.js, Vite, Tailwind CSS
+- Frontend: React.js, Vite, Tailwind CSS
 
-State Management: Redux Toolkit
+- State Management: Redux Toolkit
 
-Backend: Node.js, Express.js
+- Backend: Node.js, Express.js
 
-Authentication: JWT (JSON Web Token) + Secure Cookies
+- Authentication: JWT (JSON Web Token) + Secure Cookies
 
-Database: MongoDB with Mongoose
+- Database: MongoDB with Mongoose
 
 Encryption: bcryptjs for password hashing
 
-Backend Repo: https://github.com/heyayush87/PROFILE-MATCHER-BACKEND
+- Backend Repo: https://github.com/heyayush87/PROFILE-MATCHER-BACKEND
 
 ## 📌 Features
-## 🚀 Features
 
 - 🏠 Developer Profiles – Create and customize your profile  
 - 🤝 Connect with Developers – Send and accept connection requests  
@@ -37,4 +36,17 @@ Backend Repo: https://github.com/heyayush87/PROFILE-MATCHER-BACKEND
 - 🔧 API Endpoints
 
 
+
+### SIGNUP PAGE
+
+![Signup Page](https://github.com/heyayush87/PROFILE-MATCHER-Frontend/blob/0f8c18c26d8878d3ea46666948bc1d0d88a680f3/Screenshot%202025-06-22%20200835.png)
+
+## Profile Page
+![Profile Page ](https://github.com/heyayush87/PROFILE-MATCHER-Frontend/blob/b0846144b89eae5361db3fea79f95a4f3ea15a0d/Screenshot%202025-06-22%20200456.png)
+
+## Feed Page
+![Request Page ](https://github.com/heyayush87/PROFILE-MATCHER-Frontend/blob/7df62618f5c55c637ae671e3ad88805f3a0c2402/Screenshot%202025-06-22%20200432.png)
+
+## Connection Page
+![Request Page ](https://github.com/heyayush87/PROFILE-MATCHER-Frontend/blob/58c7e67c611b944134261c60d4a29d97a3a62a35/Screenshot%202025-06-22%20201730.png)
 
